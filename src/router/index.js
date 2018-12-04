@@ -5,6 +5,8 @@ import mall_index from '@/page/mall/index'
 import ehaot_index from '@/page/ehaot/index'
 import bed_index from '@/page/bed/index'
 import my_index from '@/page/my/index'
+import index_wapper from '@/page/mall/index_wapper'
+
 Vue.use(Router)
 
 export default new Router({
@@ -31,6 +33,13 @@ export default new Router({
     {
       path: '/mall/index',
       component: mall_index,
+      redirect:"/mall/index_wapper",
+      children: [
+        {
+          path: '/mall/index_wapper',
+          component: index_wapper
+        },
+      ]
     },
   ]
 })

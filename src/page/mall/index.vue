@@ -1,7 +1,8 @@
 <template>
   <div class="mall_index">
+    <router-view/>
     <van-tabbar v-model="active">
-      <van-tabbar-item  icon='wap-home'>首页 </van-tabbar-item>
+      <van-tabbar-item  icon='wap-home' to='/mall/index_wapper'>首页 </van-tabbar-item>
       <van-tabbar-item>
         <span>分类</span>
         <img 

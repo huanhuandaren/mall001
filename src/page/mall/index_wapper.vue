@@ -17,6 +17,7 @@
       </van-swipe-item>
     </van-swipe>
     
+
   </div>
 </template>
 
@@ -24,13 +25,16 @@
 import banner from '../../../static/img/banner.png'
 import banner1 from '../../../static/img/banner1.png'
 import { Cell, CellGroup } from 'vant';
+
 export default {
+ 
   data () {
     return {
        banner_images: [
         banner,banner1
       ],
       search_value:'',
+      
     }
   },
   methods:{
@@ -53,8 +57,6 @@ export default {
       background-color: rgba(0, 0, 0, 0.3)!important;
     }
   }
-  .van-swipe-item img{
-    width:100%;
-  }
 }
+
 </style>

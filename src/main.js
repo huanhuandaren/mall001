@@ -7,6 +7,7 @@ import { Lazyload } from 'vant';
 import { NavBar } from 'vant';
 import { Search } from 'vant';
 import { Icon } from 'vant';
+import { Step, Steps } from 'vant';
 
 Vue.config.productionTip = false
 
@@ -16,6 +17,7 @@ Vue.use(Lazyload);
 Vue.use(NavBar);
 Vue.use(Search);
 Vue.use(Icon);
+Vue.use(Step).use(Steps);
 
 /* eslint-disable no-new */
 new Vue({

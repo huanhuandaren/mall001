@@ -1,6 +1,7 @@
 <template>
   <div class="mall_index">
     <router-view/>
+    <img src="../../../static/img/heng.png" class="tabbar_line"/>
     <van-tabbar v-model="active">
       <van-tabbar-item  icon='wap-home' to='/mall/index_wapper'>首页 </van-tabbar-item>
       <van-tabbar-item>
@@ -46,8 +47,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='less' scoped>
 .mall_index{
+
   .van-tabbar-item--active{
     color:#30BBEE;
+  }
+  .tabbar_line{
+    width: 100%;
+    position: fixed;
+    bottom: 50px;
   }
 }
 </style>

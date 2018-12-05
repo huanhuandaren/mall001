@@ -33,7 +33,7 @@ import bed_icon_active from '../../static/img_icon/bed.png'
 export default {
   data () {
     return {
-      active:0,
+      active:1,
       icon: {
         e:{
           normal: e_icon,

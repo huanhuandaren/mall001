@@ -12,12 +12,12 @@
     </van-steps>
 
     <saoma_comp name='saoma' ></saoma_comp>
+
   
   </div>
 </template>
 
 <script>
-import { Cell, CellGroup } from 'vant';
 import saoma_comp from '../../components/saoma'
 export default {
    components:{
@@ -25,7 +25,7 @@ export default {
   },
   data () {
     return {
-      active:1,
+      active:0,
     }
   },
   methods:{
@@ -38,6 +38,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='less' scoped>
 .bed_index{
+  width: 90%;
+  margin: 0 auto;
   .van-nav-bar{
     background-color: #4FD6BC;
     color:white;

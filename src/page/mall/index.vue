@@ -12,14 +12,6 @@
           :src="props.active ? icon.type.active : icon.type.normal"
         >
       </van-tabbar-item>
-      <van-tabbar-item>
-        <span>商城</span>
-        <img
-          slot="icon"
-          slot-scope="props"
-          :src="props.active ? icon.shop.active : icon.shop.normal"
-        >
-      </van-tabbar-item>
       <van-tabbar-item icon='cart'>购物车 </van-tabbar-item>
       <van-tabbar-item>
         <span>我的</span>
@@ -36,8 +28,6 @@
 <script>
 import type_icon from '../../../static/img_icon/icon_classification.png'
 import type_icon_active from '../../../static/img_icon/icon_classificationmall.png'
-import Shopping_icon from '../../../static/img_icon/icon_Shopping-Mall.png'
-import Shopping_active_icon from '../../../static/img_icon/icon_mall.png'
 import icon_my_active from '../../../static/img_icon/icon_mymall.png'
 import icon_my from '../../../static/img_icon/icon_my.png'
 export default {
@@ -48,10 +38,6 @@ export default {
         type:{
           normal:type_icon,
           active:type_icon_active
-        },
-        shop:{
-          normal:Shopping_icon,
-          active:Shopping_active_icon
         },
         my:{
           normal:icon_my,

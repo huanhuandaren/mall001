@@ -8,6 +8,7 @@ import { NavBar } from 'vant';
 import { Search } from 'vant';
 import { Icon } from 'vant';
 import { Step, Steps } from 'vant';
+import { Row, Col } from 'vant';
 
 Vue.config.productionTip = false
 
@@ -18,6 +19,7 @@ Vue.use(NavBar);
 Vue.use(Search);
 Vue.use(Icon);
 Vue.use(Step).use(Steps);
+Vue.use(Row).use(Col);
 
 /* eslint-disable no-new */
 new Vue({

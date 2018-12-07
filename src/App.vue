@@ -10,6 +10,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang='less'>
 
+  .van-nav-bar__arrow,.van-nav-bar__right span{
+    color: black!important;
+  }
 </style>

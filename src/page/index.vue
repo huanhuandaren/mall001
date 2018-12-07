@@ -1,48 +1,48 @@
 <template>
   <div class="index">
     <router-view/>
+    <img src="../../static/img/heng.png" class="tabbar_line"/>
     <van-tabbar v-model="active">
-      <van-tabbar-item to='/ehaot/index'>
-        <span>E号通</span>
+      <van-tabbar-item icon='cart' to='/car/index'>购物车 </van-tabbar-item>
+      <van-tabbar-item to='/mall/index'>
+        <span>商城</span>
+        <img 
+          slot="icon"
+          slot-scope="props"
+          :src="props.active ? icon.mall.active : icon.mall.normal"
+        >
+      </van-tabbar-item>
+      
+      <van-tabbar-item to='/my/index'>
+        <span>我的</span>
         <img
           slot="icon"
           slot-scope="props"
-          :src="props.active ? icon.e.active : icon.e.normal"
+          :src="props.active ? icon.my.active : icon.my.normal"
         >
       </van-tabbar-item>
-      <van-tabbar-item to='/bed/index'>
-        <span>陪护床</span>
-        <img
-          slot="icon"
-          slot-scope="props"
-          :src="props.active ? icon.bed.active : icon.bed.normal"
-        >
-      </van-tabbar-item>
-      <van-tabbar-item icon="shop" to='/mall/index'>商城</van-tabbar-item>
-      <van-tabbar-item icon="contact" to='/my/index'>我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 
 <script>
-import e_icon from '../../static/img_icon/E_grey.png'
-import e_icon_active from '../../static/img_icon/E_green.png'
-import bed_icon from '../../static/img_icon/greybed.png'
-import bed_icon_active from '../../static/img_icon/bed.png'
-
+import icon_Shopping from '../../static/img_icon/icon_Shopping-Mall.png'
+import icon_Shopping_active from '../../static/img_icon/icon_mall.png'
+import icon_my_active from '../../static/img_icon/icon_mymall.png'
+import icon_my from '../../static/img_icon/icon_my.png'
 export default {
   data () {
     return {
       active:1,
       icon: {
-        e:{
-          normal: e_icon,
-          active: e_icon_active
+        mall:{
+          normal:icon_Shopping,
+          active:icon_Shopping_active
         },
-        bed:{
-          normal: bed_icon,
-          active: bed_icon_active
-        }
+        my:{
+          normal:icon_my,
+          active:icon_my_active
+        },
       }
     }
   }
@@ -53,10 +53,13 @@ export default {
 <style lang='less' scoped>
 .index{
   .van-tabbar-item--active{
-    color:#4FD6BC;
+    color:#30BBEE;
   }
-  .van-tabbar-item__icon img{
-    width: 18px;height: 18px;
+  .tabbar_line{
+    width: 100%;
+    position: fixed;
+    bottom: 50px;
   }
+ 
 }
 </style>

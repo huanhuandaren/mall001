@@ -2,10 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/page/index'
 import mall_index from '@/page/mall/index'
-import ehaot_index from '@/page/ehaot/index'
-import bed_index from '@/page/bed/index'
+import car_index from '@/page/car/index'
 import my_index from '@/page/my/index'
-import index_wapper from '@/page/mall/index_wapper'
+import search from '@/page/mall/search'
 
 Vue.use(Router)
 
@@ -14,16 +13,13 @@ export default new Router({
     {
       path: '/',
       component: index,
-      redirect:"/ehaot/index",
+      redirect:"/mall/index",
       children: [
         {
-          path: '/ehaot/index',
-          component: ehaot_index
+          path: '/mall/index',
+          component: mall_index
         },
-        {
-          path: '/bed/index',
-          component: bed_index
-        },
+     
         {
           path: '/my/index',
           component: my_index
@@ -31,15 +27,12 @@ export default new Router({
       ]
     },
     {
-      path: '/mall/index',
-      component: mall_index,
-      redirect:"/mall/index_wapper",
-      children: [
-        {
-          path: '/mall/index_wapper',
-          component: index_wapper
-        },
-      ]
+      path: '/car/index',
+      component: car_index
+    },
+    {
+      path: '/mall/search',
+      component: search
     },
   ]
 })

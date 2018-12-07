@@ -7,8 +7,14 @@ import { Lazyload } from 'vant';
 import { NavBar } from 'vant';
 import { Search } from 'vant';
 import { Icon } from 'vant';
-import { Step, Steps } from 'vant';
 import { Row, Col } from 'vant';
+import { SubmitBar } from 'vant';
+import { Checkbox, CheckboxGroup } from 'vant';
+import { Card } from 'vant';
+import { Button } from 'vant';
+import { Cell, CellGroup } from 'vant';
+import { Stepper } from 'vant';
+import { Tab, Tabs } from 'vant';
 
 Vue.config.productionTip = false
 
@@ -18,8 +24,14 @@ Vue.use(Lazyload);
 Vue.use(NavBar);
 Vue.use(Search);
 Vue.use(Icon);
-Vue.use(Step).use(Steps);
 Vue.use(Row).use(Col);
+Vue.use(SubmitBar);
+Vue.use(Checkbox).use(CheckboxGroup);
+Vue.use(Card);
+Vue.use(Button);
+Vue.use(Cell).use(CellGroup);
+Vue.use(Stepper);
+Vue.use(Tabs).use(Tab);
 
 /* eslint-disable no-new */
 new Vue({

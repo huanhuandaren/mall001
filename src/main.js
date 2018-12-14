@@ -13,11 +13,32 @@ import { Checkbox, CheckboxGroup } from 'vant';
 import { Card } from 'vant';
 import { Button } from 'vant';
 import { Cell, CellGroup } from 'vant';
-import { Stepper } from 'vant';
 import { Tab, Tabs } from 'vant';
+import { List } from 'vant';
+import { Toast } from 'vant';
+import {
+  GoodsAction,
+  GoodsActionBigBtn,
+  GoodsActionMiniBtn
+} from 'vant';
+import { Rate } from 'vant';
+import { Sku } from 'vant';
+import { Switch } from 'vant';
+import { AddressList } from 'vant';
+import { RadioGroup, Radio } from 'vant';
+import { AddressEdit } from 'vant';
+import { Field } from 'vant';
+import { Uploader } from 'vant';
 
-Vue.config.productionTip = false
-
+Vue.use(Uploader);
+Vue.use(Field);
+Vue.use(AddressEdit);
+Vue.use(RadioGroup);
+Vue.use(Radio);
+Vue.use(AddressList);
+Vue.use(Switch);
+Vue.use(Sku);
+Vue.use(Rate);
 Vue.use(Tabbar).use(TabbarItem);
 Vue.use(Swipe).use(SwipeItem);
 Vue.use(Lazyload);
@@ -30,9 +51,15 @@ Vue.use(Checkbox).use(CheckboxGroup);
 Vue.use(Card);
 Vue.use(Button);
 Vue.use(Cell).use(CellGroup);
-Vue.use(Stepper);
 Vue.use(Tabs).use(Tab);
+Vue.use(List);
+Vue.use(Toast);
+Vue
+  .use(GoodsAction)
+  .use(GoodsActionBigBtn)
+  .use(GoodsActionMiniBtn);
 
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

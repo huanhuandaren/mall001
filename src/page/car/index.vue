@@ -1,6 +1,6 @@
 <template>
   <div class="Car_index">
-    <van-nav-bar fixed  left-arrow title="购物车"   @click-left="back" >
+    <van-nav-bar fixed  left-arrow title="购物车"   @click-left="backLastPage" >
       <span slot="right" @click="editCar"  v-if='isDone'>编辑</span>
       <span slot="right" @click="isDone=true"  v-if='!isDone'>完成</span>
     </van-nav-bar>
@@ -14,26 +14,27 @@
         <van-row v-for='index in 2' :key='index' class="prodt_row">
           <van-col span='2' class="check_colo"><van-checkbox v-model="profChecked" checked-color='#e95c4d'/></van-col>
 
-          <van-col span='22'>
-            <van-card  
-              title="养生堂天然维生素E软胶囊"
-              thumb="../../../static/img/picture.png"
-              >
-              <van-cell slot="desc" value="规格：12粒装；重量100.5g" size='mini' is-link class="desc_cell" />
+          <van-col span='22' >
+            <div @click='goProd_d'>
+              <van-card  
+                title="养生堂天然维生素E软胶囊"
+                thumb="../../../static/img/picture.png"
+                >
+                <van-cell slot="desc" value="规格：12粒装；重量100.5g" size='mini' is-link class="desc_cell" />
 
-              <van-row slot="tags" >
-                <van-col sapn='16'>          
-                  <van-stepper 
-                    v-model="prdNum" 
-                    integer
-                    :min="1"
-                    :max="10"
-                    :step="1"/>
-                </van-col>
-                <van-col span='8' class="price_col" >￥{{(57.8*prdNum).toFixed(1)}}</van-col>
-              </van-row>
-            </van-card>
-
+                <van-row slot="tags" >
+                  <van-col sapn='16'>          
+                    <van-stepper 
+                      v-model="prdNum" 
+                      integer
+                      :min="1"
+                      :max="10"
+                      :step="1"/>
+                  </van-col>
+                  <van-col span='8' class="price_col" >￥{{(57.8*prdNum).toFixed(1)}}</van-col>
+                </van-row>
+              </van-card>
+           </div>
           </van-col>
         </van-row>
       
@@ -49,21 +50,23 @@
           <van-col span='2' class="check_colo"><van-checkbox v-model="profChecked" checked-color='#e95c4d'/></van-col>
 
           <van-col span='22'>
-            <van-card  
-              title="养生堂天然维生素E软胶囊"
-              thumb="../../../static/img/picture.png"
-              >
-              <van-cell slot="desc" value="规格：12粒装；重量100.5g" size='mini' is-link class="desc_cell" />
+            <div @click='goProd_d'>
+              <van-card  
+                title="养生堂天然维生素E软胶囊"
+                thumb="../../../static/img/picture.png"
+                >
+                <van-cell slot="desc" value="规格：12粒装；重量100.5g" size='mini' is-link class="desc_cell" />
 
-              <van-row slot="tags" >
-                <van-col sapn='19'>          
-                   <span class="noProdtTag">对不起！没有库存了</span>
-                </van-col>
-              
-                <van-col span='5' class="price_col" >￥57.8</van-col>
-              </van-row>
-            </van-card>
-
+                <van-row slot="tags" >
+                  <van-col sapn='19'>          
+                    <span class="noProdtTag">对不起！没有库存了</span>
+                  </van-col>
+                
+                  <van-col span='5' class="price_col" >￥57.8</van-col>
+                </van-row>
+              </van-card>
+            </div>
+          
           </van-col>
         </van-row>
       
@@ -101,8 +104,14 @@ export default {
     }
   },
   methods:{
-    back(){
-      history.back();
+    backLastPage(e){
+      this.$router.go(-1);
+    },
+    goProd_d(){
+      this.$router.push({
+        name:'prodDetail',
+        params:{ }
+      })
     },
     editCar(){
       this.isDone=false;
@@ -111,12 +120,28 @@ export default {
       this.checkedAll=false;
     },
     onSubmitOrder(){
-
+      this.$router.push({
+        name:"sureOrder",
+        params:{}
+      })
     },
     delAll(){
 
+    },
+
+    setCookie(cname,cvalue,exdays)
+    {
+      var d = new Date();
+      d.setTime(d.getTime()+(exdays*24*60*60*1000));
+      var expires = "expires="+d.toGMTString();
+      document.cookie = cname + "=" + cvalue + "; " + expires;
     }
+
   },
+  mounted(){
+ 
+  },
+
 }
 </script>
 

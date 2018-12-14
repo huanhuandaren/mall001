@@ -1,7 +1,7 @@
 <template>
   <div class="mall_index">
     <van-row  class="searchPanl">
-      <van-col span='20' offset="2"> <van-search placeholder="请输入商品名、品类或店铺名"  background='rgba(0, 0, 0, 0)' @click="goSearch"/></van-col>
+      <van-col span='20' offset="2"> <van-search placeholder="请输入商品名、品类或店铺名" @click="goSearch"  background='rgba(0, 0, 0, 0)'/></van-col>
       <van-col span='2' ><van-icon name="chat" color='black' size='20px' class="rig_icon"/></van-col>
     </van-row>
 
@@ -238,18 +238,13 @@ export default {
   },
   methods:{
     goSearch(){
-       this.$router.push({
-          path: '/mall/search', 
-          params: { 
-            name: 'name', 
-            dataObj: this.navList
-          }
-          /*query: {
-              name: 'name', 
-              dataObj: this.msg
-          }*/
-      })
-
+      this.$router.push({
+        path: '/mall/search', 
+        query: { 
+          name: 'name', 
+          dataObj: this.navList
+        }
+      });
     },
   },
   mounted() {
@@ -261,6 +256,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='less'>
 .mall_index{
+  .van-sku-messages{
+    padding-bottom: 0;
+  }
+  .van-hairline--top-bottom::after {
+    border: none!important;
+  }
   padding-bottom: 50px;
   background-color: #eeeeee;
   .searchPanl{
